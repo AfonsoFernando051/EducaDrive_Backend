@@ -1,7 +1,8 @@
 FROM node:20.6.1
 WORKDIR /node
+COPY . .
 ARG PORT=6000
 ENV PORT=$PORT_BUILD  
 EXPOSE $PORT_BUILD
 RUN npm install
-ENTRYPOINT npm start
+ENTRYPOINT node app.js

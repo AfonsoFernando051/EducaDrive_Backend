@@ -1,4 +1,4 @@
-const db = require('../database/db');
+const db = require('../database/db.js');
 const express = require('express');
 const router = express.Router();
 
@@ -12,7 +12,7 @@ router.post('/login', (req, res) => {
             if(err){
                 console.log(err);
                 res.status(500).json({message: 'Erro interno do servidor'})
-            }else if(results.length ===1){
+            }else if(results){
                 res.json({message: 'Autenticação bem sucedida'});
             }else{
                 res.status(401).json({message: 'Credenciais inválidas'});
