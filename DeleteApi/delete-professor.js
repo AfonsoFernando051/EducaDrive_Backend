@@ -1,14 +1,15 @@
-const db = require('../database/db.js');
+const router = require('../GetApi/read-professor-id');
+const db = require('../database/db');
 const express = require('express');
-const router = express.Router();
+const app = express();
+const route = express.Router();
 
-router.put("/professores/:id", (req, res) => {
+router.delete('/professor/:id', (req, res) => {
     const id = parseInt(req.params.id);
-    const {nome, veiculo1, veiculo2} = req.body;
-    console.log(nome, veiculo1, veiculo2);
+    console.log(id);
     db.query(
-        'UPDATE professores SET nome = ?,veiculo1 = ?,veiculo2 = ? WHERE id = ?',
-        [nome, veiculo1, veiculo2, id],
+        "DELETE FROM professores WHERE id = ?",
+        [id],
         (err, results) => {
             if(err){
                 console.log(err);
