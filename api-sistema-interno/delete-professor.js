@@ -1,11 +1,14 @@
-const db = require('../database/db.js');
+const router = require('../GetApi/read-professor-id');
+const db = require('../config/db');
 const express = require('express');
-const router = express.Router();
+const app = express();
+const route = express.Router();
 
-router.get("/read-professores/:id", (req, res) => {
+router.delete('/professor/:id', (req, res) => {
     const id = parseInt(req.params.id);
+    console.log(id);
     db.query(
-        'SELECT * FROM professores WHERE id = ?',
+        "DELETE FROM professores WHERE id = ?",
         [id],
         (err, results) => {
             if(err){
