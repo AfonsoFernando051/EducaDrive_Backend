@@ -1,6 +1,6 @@
 module.exports = app => {
 
-    const remove = (req, res) => {
+    const removeProfessor = (req, res) => {
         app.db('professores')
         .where({id: req.params.id})
         .del()
@@ -10,5 +10,5 @@ module.exports = app => {
         })
     }
     
-    return {remove}
+    return {removeProfessor}
 }

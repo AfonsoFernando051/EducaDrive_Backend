@@ -1,6 +1,6 @@
 module.exports = app => {
 
-    const insert = (req, res) => {
+    const insertProfessor = (req, res) => {
         const dados = {...req.body};
 
         app.db('professores')
@@ -13,5 +13,5 @@ module.exports = app => {
         })
     }
     
-    return {insert}
+    return {insertProfessor}
 }

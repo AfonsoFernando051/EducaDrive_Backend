@@ -13,16 +13,16 @@ module.exports = app => {
         .get(app.api.user.getById)
 
     app.route('/read-professores')
-        .get(app.api.readProfessores.get)
+        .get(app.api.read.getProfessores)
     app.route('/read-professores/:id')
-        .get(app.api.readProfessores.getById)
+        .get(app.api.read.getProfessorById)
 
     app.route('/insert-professor')
-        .post(app.api.createProfessor.insert)
+        .post(app.api.create.insertProfessor)
         
     app.route('/delete-professor/:id')
-        .delete(app.api.deleteProfessor.remove)
+        .delete(app.api.delete.removeProfessor)
 
     app.route('/update-professor/:id')
-        .put(app.api.updateProfessor.update)   
+        .put(app.api.update.updateProfessor)   
 }

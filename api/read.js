@@ -1,6 +1,6 @@
 module.exports = app => {
 
-    const get = (req, res) => {
+    const getProfessores = (req, res) => {
         app.db('professores')
         .select('*')
         .then( rows => {res.json(rows);})
@@ -9,7 +9,7 @@ module.exports = app => {
         })
     }
 
-    const getById = (req, res) => {
+    const getProfessorById = (req, res) => {
         app.db('professores')
         .select('*')
         .where({id: req.params.id})
@@ -19,5 +19,5 @@ module.exports = app => {
         })
     }
     
-    return {get, getById}
+    return {getProfessores, getProfessorById}
 }

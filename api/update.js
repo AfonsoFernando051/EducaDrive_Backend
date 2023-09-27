@@ -1,6 +1,6 @@
 module.exports = app => {
 
-    const update = (req, res) => {
+    const updateProfessor = (req, res) => {
         dados = req.body;
         app.db('professores')
         .update(dados)
@@ -11,5 +11,5 @@ module.exports = app => {
         })
     }
     
-    return {update}
+    return {updateProfessor}
 }
