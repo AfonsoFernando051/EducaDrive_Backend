@@ -3,15 +3,13 @@
 /**
  * @type { Object.<string, import("knex").Knex.Config> }
  */
+
+const {db} = require('./.env')
+
 module.exports = {
 
     client: 'mysql2',
-    connection: {
-      host: 'localhost',
-      database: 'EducaDrive',
-      user:     'AfonsoFernando',
-      password: 'F3rn@nd0'
-    },
+    connection: db,
     pool: {
       min: 2,
       max: 10
