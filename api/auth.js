@@ -55,28 +55,3 @@ module.exports = app => {
 
     return {signin, validateToken}
 }
-
-// const db = require('../../config/db.js');
-// const express = require('express');
-// const router = express.Router();
-
-// router.post('/login', (req, res) => {
-//     const {email, password} = req.body;
-
-//     db.query(
-//         'SELECT * FROM users_school WHERE email = ? AND password = ?',
-//         [email, password],
-//         (err, results) => {
-//             if(err){
-//                 console.log(err);
-//                 res.status(500).json({message: 'Erro interno do servidor'},{login:false})
-//             }else if(results){
-//                 res.json({message: 'Autenticação bem sucedida'},{login:true});
-//             }else{
-//                 res.status(401).json({message: 'Credenciais inválidas'},{login:false});
-//             }
-//         }
-//     )
-// })
-
-// module.exports = router;

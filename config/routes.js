@@ -12,4 +12,17 @@ module.exports = app => {
         .put(app.api.user.save)
         .get(app.api.user.getById)
 
+    app.route('/read-professores')
+        .get(app.api.readProfessores.get)
+    app.route('/read-professores/:id')
+        .get(app.api.readProfessores.getById)
+
+    app.route('/insert-professor')
+        .post(app.api.createProfessor.insert)
+        
+    app.route('/delete-professor/:id')
+        .delete(app.api.deleteProfessor.remove)
+
+    app.route('/update-professor/:id')
+        .put(app.api.updateProfessor.update)   
 }
