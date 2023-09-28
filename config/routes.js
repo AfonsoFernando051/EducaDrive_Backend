@@ -26,4 +26,3 @@ module.exports = app => {
     app.route('/update-professor/:id')
         .put(app.api.update.updateProfessor)   
 }
-//teste
