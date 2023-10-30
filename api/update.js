@@ -10,6 +10,17 @@ module.exports = app => {
             res.status(500).json({error: 'Ocorreu um erro ao atualizar os dados.'})
         })
     }
+
+    const updateAluno = (req, res) => {
+        dados = req.body;
+        app.db('alunos')
+        .update(dados)
+        .where({id: req.params.id})
+        .then(res.status(200).json({message: 'Aluno atualizado com sucesso!'}))
+        .catch(error => {
+            res.status(500).json({error: 'Ocorreu um erro ao atualizar os dados.'})
+        })
+    }
     
-    return {updateProfessor}
+    return {updateProfessor, updateAluno}
 }

@@ -9,6 +9,16 @@ module.exports = app => {
             res.status(500).json({error: 'Ocorreu um erro ao excluir os dados.'})
         })
     }
-    
-    return {removeProfessor}
+
+    const removeAluno = (req, res) => {
+        app.db('alunos')
+        .where({id: req.params.id})
+        .del()
+        .then(res.status(200).json({message: 'Aluno excluído com sucesso!'}))
+        .catch(error => {
+            res.status(500).json({error: 'Ocorreu um erro ao excluir os dados.'})
+        })
+    }
+
+    return {removeProfessor, removeAluno}
 }

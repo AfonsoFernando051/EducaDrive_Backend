@@ -16,13 +16,28 @@ module.exports = app => {
         .get(app.api.read.getProfessores)
     app.route('/read-professores/:id')
         .get(app.api.read.getProfessorById)
+    app.route('/read-escolas')
+        .get(app.api.read.getEscolas)
+    app.route('/read-alunos')
+        .get(app.api.read.getAlunos)
+    app.route('/read-aluno/:id')
+        .get(app.api.read.getAlunoById)
 
     app.route('/insert-professor')
         .post(app.api.create.insertProfessor)
-        
+    app.route('/insert-aluno')
+        .post(app.api.create.insertAluno)  
+
     app.route('/delete-professor/:id')
         .delete(app.api.delete.removeProfessor)
+    app.route('/delete-aluno/:id')
+        .delete(app.api.delete.removeAluno)
 
     app.route('/update-professor/:id')
         .put(app.api.update.updateProfessor)   
+    app.route('/update-aluno/:id')
+        .put(app.api.update.updateAluno)
+
+
+  
 }
