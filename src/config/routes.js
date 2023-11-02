@@ -4,11 +4,11 @@ module.exports = app => {
     app.post('/validateToken', app.src.api.auth.validateToken) 
 
     app.route('/sign-up')
-        .all(app.config.passport.authenticate())
+        .all(app.src.config.passport.authenticate())
         .post(app.src.api.user.save)
         .get(app.src.api.user.get);
     app.route('/sign-up/:id')
-        .all(app.config.passport.authenticate())
+        .all(app.src.config.passport.authenticate())
         .put(app.src.api.user.save)
         .get(app.src.api.user.getById)
 
@@ -39,7 +39,4 @@ module.exports = app => {
         .put(app.src.api.update.updateProfessor)   
     app.route('/update-aluno/:id')
         .put(app.src.api.update.updateAluno)
-
-
-  
 }

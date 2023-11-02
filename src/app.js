@@ -13,8 +13,8 @@ consign()
     .then('./config/middlewares.js')
     .then('./src/api/validation.js')
     .then('./src/api')
-    .then('./config/passport.js')
-    .then('./config/routes.js')
+    .then('./src/config/passport.js')
+    .then('./src/config/routes.js')
     .into(app);
 
 app.listen(port, () => {
