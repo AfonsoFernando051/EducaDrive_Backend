@@ -10,7 +10,7 @@ app.db = db;
 dotenv.config();
 
 consign()
-    .then('./config/middlewares.js')
+    .then('./src/config/middlewares.js')
     .then('./src/api/validation.js')
     .then('./src/api')
     .then('./src/config/passport.js')
